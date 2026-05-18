@@ -211,7 +211,7 @@ export default function SignUp() {
             className="flex flex-row items-center  gap-3"
           >
             <Text className="text-gray-600 font-semibold text-lg">
-              Don't have an account?
+              Already a User?
             </Text>
             <Text className="text-blue-600 text-xl font-bold">Sign In</Text>
           </TouchableOpacity>

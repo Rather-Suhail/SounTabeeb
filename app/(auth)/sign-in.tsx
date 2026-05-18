@@ -1,72 +1,70 @@
+import { assets } from "@/assets/assets";
+import { Ionicons } from "@expo/vector-icons";
+import { LinearGradient } from "expo-linear-gradient";
+import { useRouter } from "expo-router";
+import { useState } from "react";
 import {
-  ScrollView,
-  View,
-  Text,
   Image,
+  KeyboardAvoidingView,
+  ScrollView,
+  Text,
   TextInput,
-  TouchableOpacity,Alert,
-  KeyboardAvoidingView
+  TouchableOpacity,
+  View
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { assets } from "@/assets/assets";
-import { useState } from "react";
-import { Ionicons } from "@expo/vector-icons";
-import { useRouter } from "expo-router";
-import { LinearGradient } from "expo-linear-gradient";
-import { Platform } from "react-native";
-import { validateEmail, validatePassword } from "@/utils/validation";
 
 
 export default function SignIn() {
   const router = useRouter();
   const [email, setEmail] = useState("");
-  const [name, setName] = useState("");
+  // const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const[showPassword,setShowPassword]=useState(false);
-  const handleLogin = async () => {
-    const emailCheck = validateEmail(email);
-  const passwordCheck = validatePassword(password);
+//   const handleLogin = async () => {
+//     const emailCheck = validateEmail(email);
+//   const passwordCheck = validatePassword(password);
 
-  if (!emailCheck.valid) {
-    return Alert.alert(emailCheck.message);
-  }
+//   if (!emailCheck.valid) {
+//     return Alert.alert(emailCheck.message);
+//   }
 
-  if (!passwordCheck.valid) {
-    return Alert.alert(passwordCheck.message);
-  }
+//   if (!passwordCheck.valid) {
+//     return Alert.alert(passwordCheck.message);
+//   }
 
-  // API CALL
-  try {
-    const res = await fetch("http://10.113.71.177:5000/api/auth/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email,
-        password,
-      }),
-    });
+//   // API CALL
+//   try {
+//     const res = await fetch("http://10.113.71.177:5000/api/auth/login", {
+//       method: "POST",
+//       headers: {
+//         "Content-Type": "application/json",
+//       },
+//       body: JSON.stringify({
+//         email,
+//         password,
+//       }),
+//     });
 
-    const data = await res.json();
+//     const data = await res.json();
 
-    if (!res.ok) {
-      return Alert.alert(data.message);
-    }
+//     if (!res.ok) {
+//       return Alert.alert(data.message);
+//     }
 
-    Alert.alert("Success", "Login successful");
+//     Alert.alert("Success", "Login successful");
 
-    // go to home
-    router.replace("/home");
+//     // go to home
+//     router.replace("/home");
 
-  } catch (error) {
-    Alert.alert("Server error");
-  }
-};
+//   } catch (error) {
+//     Alert.alert("Server error");
+//   }
+// };
   return (
     <SafeAreaView  className="flex-1">
       <KeyboardAvoidingView  style={{ flex: 1 }} behavior="height">
-        // behavior={Platform.OS === "ios" ? "padding" : "height"}>
+         {/* behavior={Platform.OS === "ios" ? "padding" : "height"}> */}
       <ScrollView contentContainerStyle={{ padding: 16 }} showsVerticalScrollIndicator={false}>
         <View className="flex justify-center items-center  m-2">
           <LinearGradient colors={["#2E86DE", "#A9CCE3"]}   style={{
@@ -134,7 +132,7 @@ export default function SignIn() {
             </View>
 
               <TouchableOpacity
-            onPress={handleLogin}
+            onPress={() => router.push("/(tabs)/home")}
             className="border rounded-lg bg-blue-600 flex flex-row items-center  justify-between p-2 my-4 "
           >
             <Ionicons name="person" size={24} color={"#fff"}></Ionicons>

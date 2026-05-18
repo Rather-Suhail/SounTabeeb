@@ -1,30 +1,27 @@
-import {
-  Text,
-  Image,
-  View,
-  ScrollView,
-  TouchableOpacity,
-  TextInput,
-} from "react-native";
 import { assets } from "@/assets/assets";
-import Contact from "./contact";
-import { useState } from "react";
-import { Ionicons } from "@expo/vector-icons";
-import { SafeAreaView } from "react-native-safe-area-context";
-import { useRouter } from "expo-router";
-import * as ImagePicker from "expo-image-picker";
-import AsyncStorage from "@react-native-async-storage/async-storage";
-import { useEffect } from "react";
 import { useUser } from "@/context/UserContext";
+import { Ionicons } from "@expo/vector-icons";
+import * as ImagePicker from "expo-image-picker";
+import { useRouter } from "expo-router";
+import { useState } from "react";
+import {
+  Image,
+  ScrollView,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function ProfileDetails() {
   const router = useRouter();
   const user = {
-    name: "Rather Suahil",
-    email: "saleemrather3700@gmail.com",
-    contact: "7889463982",
-    dob: "24-03-2001",
-    address: "Mazhama, Magam ,Budgam-193401",
+    name: "Mir yawar",
+    email: "miryawer990@gmail.com",
+    contact: "6005647721",
+    dob: "09-11-2001",
+    address: "Watalpore, Magam ,Budgam-193401",
     City: "Srinagar",
     District: "Budgam",
     pincode: "193401",
@@ -35,8 +32,8 @@ export default function ProfileDetails() {
   const [userProfile, setUserProfile] = useState(user);
   const [profileEditing, setProfileEditing] = useState(false);
   // const [image, setImage] = useState<string | null>(null);
-  const { profileImage, updateProfileImage ,userName,
-  updateUserName,} = useUser();
+  const { profileImage, updateProfileImage, userName, updateUserName } =
+    useUser();
   const pickImage = async () => {
     // Ask permission
     const permissionResult =
@@ -104,11 +101,7 @@ export default function ProfileDetails() {
             {/* <TouchableOpacity onPress={pickImage}> */}
             <Image
               // source={image ? { uri: image } : userProfile.image}
-              source={
-  profileImage
-    ? { uri: profileImage }
-    : userProfile.image
-}
+              source={profileImage ? { uri: profileImage } : userProfile.image}
               className="w-full h-full rounded-full"
             ></Image>
             {/* </TouchableOpacity> */}
@@ -121,7 +114,7 @@ export default function ProfileDetails() {
           {profileEditing ? (
             <TextInput
               // value={userProfile.name}
-              value=  {userName ? userName : userProfile.name}
+              value={userName ? userName : userProfile.name}
               onChangeText={(text) =>
                 setUserProfile({
                   ...userProfile,
@@ -296,7 +289,7 @@ export default function ProfileDetails() {
           {/*email address  */}
           <View className="flex flex-row items-center py-3">
             {/* Left side */}
-            <View className="flex flex-row items-center gap-3 w-1/2">
+            <View className="flex flex-row items-center gap-5 w-1/2">
               <Ionicons name="mail-outline" color={"purple"} size={24} />
               <Text className="text-lg font-medium text-gray-600">
                 Email Address

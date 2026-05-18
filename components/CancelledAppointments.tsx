@@ -5,7 +5,7 @@ import { doctors } from "@/assets/assets";
 export default function CancelledAppointments(){
     return(
         <View>
-         <View className="flex flex-row items-center justify-center gap-4 bg-red-100 p-4  mb-8">
+            <View className="flex flex-row items-center justify-center gap-4 bg-red-100 p-4  mb-8">
                 <Ionicons name="close" color={"red"} size={32} />
                 <View className="flex-1">
                   <Text className="text-xl font-bold text-gray-700">
@@ -14,7 +14,7 @@ export default function CancelledAppointments(){
                   <Text className=" text-medium font-medium text-gray-600">
                     These appointments were cancelled by you or the doctor.
                   </Text>
-                </View>
+            </View>
          </View>
            <View> 
             {doctors.slice(7,10).map((item,index)=>(

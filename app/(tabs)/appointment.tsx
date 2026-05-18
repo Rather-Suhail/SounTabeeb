@@ -36,7 +36,7 @@ export default function Appointment() {
         Manage your upcoming and past appointments
       </Text>
       <View className="flex flex-row items-center justify-between py-6">
-        <TouchableOpacity onPress={() =>setActiveTab("upcoming")} className={`px-4 py-2 rounded-lg ${activeTab==="upcoming"?"bg-blue-600":"bg-[#fff]"}`}>
+        <TouchableOpacity onPress={() =>setActiveTab("upcoming")} className={` py-2 rounded-lg ${activeTab==="upcoming"?"bg-blue-600":"bg-[#fff]"}`}>
               <View className="flex flex-row items-center gap-2">
             <Ionicons name="calendar-clear-outline"  size={24} color={activeTab === "upcoming" ? "white" : "gray"}></Ionicons>
             <Text>Upcoming</Text>
@@ -45,13 +45,13 @@ export default function Appointment() {
         </TouchableOpacity>
       
 
-        <TouchableOpacity onPress={()=>setActiveTab("completed")} className={`px-4 py-2 rounded-lg ${activeTab==="completed"?"bg-green-600":"bg-[#fff]"}`}>
+        <TouchableOpacity onPress={()=>setActiveTab("completed")} className={` py-2 rounded-lg ${activeTab==="completed"?"bg-green-600":"bg-[#fff]"}`}>
             <View className="flex flex-row items-center gap-2">
             <Ionicons name="checkmark-done-circle-outline"  size={28} color={activeTab === "completed" ? "white" : "gray"}></Ionicons>
             <Text>Completed</Text>
             </View>
         </TouchableOpacity>
-        <TouchableOpacity onPress={()=>setActiveTab("cancelled")} className={`px-4 py-2 rounded-lg ${activeTab==="cancelled"?"bg-red-600":"bg-[#fff]"}`}>
+        <TouchableOpacity onPress={()=>setActiveTab("cancelled")} className={` py-2 rounded-lg ${activeTab==="cancelled"?"bg-red-600":"bg-[#fff]"}`}>
             <View className="flex flex-row items-center gap-2">
              <Ionicons name="close-circle-outline"  size={28} color={activeTab === "cancelled" ? "white" : "gray"}></Ionicons>
             <Text>Cancelled</Text>
