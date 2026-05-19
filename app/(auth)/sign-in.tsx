@@ -132,9 +132,8 @@ export default function SignIn() {
             </View>
 
               <TouchableOpacity
-            onPress={() => router.push("/(tabs)/home")}
-            className="border rounded-lg bg-blue-600 flex flex-row items-center  justify-between p-2 my-4 "
-          >
+            onPress={handleLogin}
+            className="border rounded-lg bg-blue-600 flex flex-row items-center  justify-between p-2 my-4 ">
             <Ionicons name="person" size={24} color={"#fff"}></Ionicons>
             <Text className="text-white text-lg font-semibold text-center">
               Sign In
