@@ -66,7 +66,7 @@ export default function SignIn() {
   return (
     <SafeAreaView  className="flex-1">
       <KeyboardAvoidingView  style={{ flex: 1 }} behavior="height">
-        // behavior={Platform.OS === "ios" ? "padding" : "height"}>
+        // behavior={Platform.OS === "ios" ? "padding" : "height"}
       <ScrollView contentContainerStyle={{ padding: 16 }} showsVerticalScrollIndicator={false}>
         <View className="flex justify-center items-center  m-2">
           <LinearGradient colors={["#2E86DE", "#A9CCE3"]}   style={{

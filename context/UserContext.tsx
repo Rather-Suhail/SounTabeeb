@@ -43,7 +43,7 @@ export const UserProvider = ({ children }: any) => {
   );
 };
   return (
-    <UserContext.Provider
+    <UserContext.Provider 
       value={{
         profileImage,
         updateProfileImage,
